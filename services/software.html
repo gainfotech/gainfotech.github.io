@@ -1,113 +1,388 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GA Infotech Software Development</title>
-  <meta name="description" content="At GA Infotech we develop custom software for your small and medium sized business. We have developed systems
-  that automate and streamline business processes for healthcare professionals, hospitals, manufacturing organizations, e-commerce businesses and financial institutions.">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Software Development — GA Infotech</title>
   
-  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-
+  <!-- Modern Fonts: Source Sans 3 & Source Code Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS for modern layouts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Source Sans 3"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"Source Code Pro"', 'monospace'],
+          },
+          colors: {
+            navy: {
+              DEFAULT: '#061b31',
+              dark: '#030d1a',
+              brand: '#1c1e54',
+              deep: '#0a192f',
+            },
+            stripe: {
+              purple: '#533afd',
+              hover: '#4434d4',
+              ruby: '#ea2261',
+              magenta: '#f96bee',
+              slate: '#64748d',
+              border: '#e5edf5',
+            }
+          },
+          boxShadow: {
+            'stripe': 'rgba(50, 50, 93, 0.15) 0px 30px 60px -30px, rgba(0, 0, 0, 0.08) 0px 18px 36px -18px',
+            'stripe-hover': 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.12) 0px 30px 60px -30px',
+            'stripe-sm': 'rgba(50, 50, 93, 0.05) 0px 2px 5px 0px, rgba(0, 0, 0, 0.03) 0px 1px 1.5px 0px',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .hero-glow {
+      background: radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.1) 0%, rgba(255, 255, 255, 0) 50%), #ffffff;
+    }
+    
+    .nav-link-hover::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #533afd;
+      transition: width 0.25s ease-out;
+    }
+    .nav-link-hover:hover::after {
+      width: 100%;
+    }
+  </style>
 </head>
+<body class="text-slate-700 antialiased font-sans">
 
-<body>
-  <div class="container">
-    <header class="d-flex flex-wrap justify-content-center align-items-center py-3 mb-4">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <img src="/images/gainfotech.png" alt="GA Infotech" height="70">
-      </a>
-
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="mailto:support@gainfotech.com" rel="nofollow" class="nav-link">Contact Us</a></li>
-      </ul>
-    </header>
-  </div>
-
-  <div class="container">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
-        <li class="breadcrumb-item">
-          <a class="link-body-emphasis text-decoration-none" href="/">Home</a>
-        </li>
-        <li class="breadcrumb-item">
-          <a class="link-body-emphasis text-decoration-none" href="/services">Services</a>
-        </li>
-        <li class="breadcrumb-item">
-          <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">Software Development</a>
-        </li>
-      </ol>
-    </nav>
-
-    <div class="row flex-lg-row-reverse row-cols-lg-2 align-items-center g-5 mt-3">
-      <div classs="col-lg-6">
-        <img src="/images/software_development.jpg" alt="Software Development" class="img-fluid" />
-      </div>
-      <div class="col-lg-6">
-        <div class="d-flex mt-5 pb-3 border-bottom">
-          <div
-            class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-server"
-              viewBox="0 0 16 16">
-              <path
-                d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z" />
-              <path
-                d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334a6.51 6.51 0 0 1-1.458.79C11.81 7.684 9.967 8 8 8c-1.966 0-3.809-.317-5.208-.876a6.508 6.508 0 0 1-1.458-.79z" />
-              <path
-                d="M14.667 11.668a6.51 6.51 0 0 1-1.458.789c-1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.51 6.51 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667v-1.665z" />
-            </svg>
-          </div>
-          <h1>Software Development</h1>
-        </div>
-
-        <div class="mt-3">
-          <p>At GA Infotech we develop custom software for your small and medium sized business. We have developed systems
-            that automate and streamline business processes for healthcare professionals, hospitals, manufacturing
-            organizations, e-commerce businesses and financial institutions.</p>
-          <p>No implementation is too small or too big. Whether you are self-employed professional running a small business
-            or a fortune 500 company with millions of customers, we have developed systems for all kinds of businesses.</p>
-          <ul>
-            <li>Agile software development</li>
-            <li>Predictable cost of implementation</li>
-            <li>Turnkey solutions for your business process</li>
-            <li>Affordable on-going support and maintenance</li>
-          </ul>
-          <p>We specialize in Java, Ruby, Python, Javascript and various other commercial and open-source technologies.</p>
-        </div>
-      </div>
+  <!-- Interactive Demo Header / Controls -->
+  <div class="bg-navy text-white text-xs px-4 py-2 flex flex-wrap justify-between items-center border-b border-white/10 relative z-50">
+    <div class="flex items-center gap-2">
+      <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-mono text-slate-300">GA Infotech — Redesign Prototype v1.0 (Stripe-Inspired)</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="text-slate-400">Layout: <strong class="text-emerald-400 font-normal">Mature & Modern</strong></span>
+      <div class="h-4 w-px bg-white/10"></div>
+      <button onclick="toggleDarkMode()" class="hover:text-emerald-300 transition-colors">Toggle Dark/Light Mode</button>
     </div>
   </div>
-  
-  <div class="container mt-5">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-          <img src="/images/gainfotech.png" alt="GA Infotech" width="32" height="32">
+
+  <!-- STICKY BLURRED NAVIGATION -->
+  <header class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-stripe-border/50 z-40 transition-colors duration-300" id="main-nav">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="../" class="flex items-center gap-3 group">
+        <div class="flex items-center">
+          <img src="https://www.gainfotech.com/images/gainfotech.png" alt="GA Infotech Logo" class="h-12 w-auto object-contain" onerror="this.outerHTML='<span class=\'font-sans text-xl font-bold tracking-tight text-navy\'>GA <span class=\'text-stripe-purple\'>INFOTECH</span></span>'">
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="../" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">Home</a>
+        <a href="../services/" class="text-sm font-medium text-stripe-purple transition-colors relative nav-link-hover py-1">Services</a>
+        <a href="../about/" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">About Us</a>
+        <a href="../gainfotech_redesign_preview.html#contact" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">Contact</a>
+      </nav>
+
+      <!-- CTA Action Button -->
+      <div>
+        <a href="../gainfotech_redesign_preview.html#contact" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-5 py-2.5 rounded-md shadow-stripe-sm hover:shadow-stripe transition-all duration-300">
+          Get Started
         </a>
-        <span class="mb-3 mb-md-0 text-body-secondary">© 2026 GA Infotech, LLC</span>
       </div>
-      <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="mailto:support@gainfotech.com" rel="nofollow" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
-        <li class="nav-item"><a href="/privacy" rel="nofollow" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
-        <li class="nav-item"><a href="/terms" rel="nofollow" class="nav-link px-2 text-body-secondary">Terms Of Service</a></li>
-      </ul>
-    </footer>
-  </div>
+    </div>
+  </header>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-glow pt-16 pb-20 px-6 relative overflow-hidden transition-colors duration-300">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-7 space-y-6 text-left">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-stripe-purple/10 text-stripe-purple border border-stripe-purple/20">
+          Senior Software Engineering Practice
+        </span>
+        <h1 class="text-4xl md:text-5xl font-light tracking-tight text-navy leading-[1.1]" style="letter-spacing: -1.5px;">
+          Bespoke Custom Software <br><span class="font-normal text-stripe-purple">Engineered for Performance</span>.
+        </h1>
+        <p class="text-lg text-slate-500 font-light leading-relaxed">
+          We translate complex, multi-layered offline business logic into clean, automated cloud software. No bloated legacy constraints. Just secure, scalable APIs and elegant web platforms built for the long haul.
+        </p>
+        <div class="pt-2">
+          <a href="../gainfotech_redesign_preview.html#contact" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-6 py-3 rounded-md shadow-stripe transition-colors">
+            Start Your Build
+          </a>
+        </div>
+      </div>
+
+      <!-- Developer terminal simulation mockup -->
+      <div class="lg:col-span-5 relative">
+        <div class="bg-navy rounded-lg border border-white/10 shadow-stripe overflow-hidden font-mono text-xs text-slate-300 max-w-md mx-auto">
+          <!-- Window Header (Mac terminal style) -->
+          <div class="bg-[#030d1a] px-4 py-3 flex items-center justify-between border-b border-white/5">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <span class="text-[10px] text-slate-500">ga-dev-server — node</span>
+            <div class="w-10"></div>
+          </div>
+          <!-- Terminal code display -->
+          <div class="p-5 space-y-3 font-mono leading-relaxed">
+            <div>
+              <span class="text-pink-400">const</span> gaInfotechApp = require(<span class="text-emerald-400">'@gainfotech/core'</span>);
+            </div>
+            <div>
+              <span class="text-pink-400">const</span> server = gaInfotechApp.createSession({
+              <div class="pl-4">
+                stack: [<span class="text-emerald-400">'TypeScript'</span>, <span class="text-emerald-400">'NodeJS'</span>, <span class="text-emerald-400">'Cloud'</span>],<br>
+                agile: <span class="text-amber-300">true</span>,<br>
+                lifetimeSupport: <span class="text-amber-300">true</span>
+              </div>
+              });
+            </div>
+            <div>
+              server.deploy().then(() => {
+              <div class="pl-4">
+                console.log(<span class="text-emerald-400">'✓ Application compiled successfully.'</span>);<br>
+                console.log(<span class="text-emerald-400">'✓ Zero-friction business sync operational.'</span>);
+              </div>
+              });
+            </div>
+            <div class="pt-2 border-t border-white/5 text-[10px] text-slate-500">
+              $ npm run deploy:production <br>
+              <span class="text-emerald-400">&gt; Live deployment complete (0.84 seconds)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ENGINEERING VALUES -->
+  <section class="py-20 px-6 bg-slate-50 border-y border-stripe-border/50 transition-colors duration-300" id="values">
+    <div class="max-w-6xl mx-auto space-y-16">
+      
+      <div class="text-center space-y-4 max-w-2xl mx-auto">
+        <h2 class="text-xs font-semibold text-stripe-purple uppercase tracking-widest">Our Engineering DNA</h2>
+        <h3 class="text-3xl font-light text-navy">Robust Stacks. Reliable Solutions.</h3>
+        <p class="text-slate-500 font-light text-base">We avoid fragile, over-engineered architectures. We build highly maintainable, modern, and thoroughly documented applications.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Modern Stacks -->
+        <div class="bg-white rounded-lg border border-stripe-border p-8 shadow-stripe-sm space-y-4">
+          <div class="h-10 w-10 bg-stripe-purple/10 text-stripe-purple rounded-lg flex items-center justify-center font-bold">🛠</div>
+          <h4 class="text-xl font-medium text-navy">Modern Stacks</h4>
+          <p class="text-sm text-slate-500 font-light leading-relaxed">
+            We build using industry-proven technologies that guarantee longevity and easy maintenance. From fast Java frameworks and secure Python engines to dynamic TypeScript frontends, we use the right tool for the right job.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-2 text-[10px] font-mono">
+            <span class="bg-slate-100 px-2 py-1 rounded">TypeScript</span>
+            <span class="bg-slate-100 px-2 py-1 rounded">Java Spring</span>
+            <span class="bg-slate-100 px-2 py-1 rounded">Python Django</span>
+            <span class="bg-slate-100 px-2 py-1 rounded">React/Node</span>
+          </div>
+        </div>
+
+        <!-- Zero-Friction Automation -->
+        <div class="bg-white rounded-lg border border-stripe-border p-8 shadow-stripe-sm space-y-4">
+          <div class="h-10 w-10 bg-stripe-purple/10 text-stripe-purple rounded-lg flex items-center justify-center font-bold">⚡</div>
+          <h4 class="text-xl font-medium text-navy">Zero-Friction Automation</h4>
+          <p class="text-sm text-slate-500 font-light leading-relaxed">
+            We specialize in dismantling tedious administrative barriers. We map out your manual spreadsheet activities, contract handoffs, and billing approvals, transforming them into background automated microservices.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-2 text-[10px] font-mono">
+            <span class="bg-slate-100 px-2 py-1 rounded">API Schedulers</span>
+            <span class="bg-slate-100 px-2 py-1 rounded">Data Parsers</span>
+            <span class="bg-slate-100 px-2 py-1 rounded">Webhooks</span>
+          </div>
+        </div>
+
+        <!-- Lifetime Architecture Support -->
+        <div class="bg-white rounded-lg border border-stripe-border p-8 shadow-stripe-sm space-y-4">
+          <div class="h-10 w-10 bg-stripe-purple/10 text-stripe-purple rounded-lg flex items-center justify-center font-bold">🛡</div>
+          <h4 class="text-xl font-medium text-navy">Lifetime Support</h4>
+          <p class="text-sm text-slate-500 font-light leading-relaxed">
+            We don't hand over code and disappear. GA Infotech provides lifetime infrastructure support, regular security patches, and scalable adaptation plans to ensure your software changes dynamically alongside your business.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-2 text-[10px] font-mono">
+            <span class="bg-slate-100 px-2 py-1 rounded">24/7 Monitoring</span>
+            <span class="bg-slate-100 px-2 py-1 rounded">DevOps Care</span>
+            <span class="bg-slate-100 px-2 py-1 rounded">SLA Support</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DETAILED SPECIFICATIONS -->
+  <section class="py-24 px-6 bg-white transition-colors duration-300">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+      
+      <div class="md:col-span-6 space-y-6">
+        <h3 class="text-xs font-semibold text-stripe-purple uppercase tracking-widest">Our Development Philosophy</h3>
+        <h4 class="text-3xl font-light text-navy leading-tight">Agile delivery with clear milestones.</h4>
+        <p class="text-slate-500 font-light leading-relaxed">
+          We believe high-quality development requires absolute transparency. Rather than disappearing for six months, we work in bi-weekly sprints, providing you with functional builds and architectural updates at every single interval.
+        </p>
+        <p class="text-slate-500 font-light leading-relaxed">
+          You collaborate directly with senior technical leads who understand software architecture inside out, ensuring your project is designed accurately from day one.
+        </p>
+      </div>
+
+      <div class="md:col-span-6 bg-slate-50 border border-stripe-border rounded-lg p-8 space-y-6">
+        <h4 class="text-lg font-medium text-navy border-b border-stripe-border pb-3">Development Steps</h4>
+        <ul class="space-y-4 text-sm font-light">
+          <li class="flex items-start gap-3">
+            <span class="text-stripe-purple font-mono font-bold text-xs">01</span>
+            <div>
+              <strong class="font-semibold text-navy">Architectural Blueprint:</strong> We map out full entity-relationship schemas, API gateways, and user journeys before writing a line of code.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-stripe-purple font-mono font-bold text-xs">02</span>
+            <div>
+              <strong class="font-semibold text-navy">Bi-Weekly Sprints:</strong> Functional features are delivered and demonstrated continuously, allowing agile feedback loops.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-stripe-purple font-mono font-bold text-xs">03</span>
+            <div>
+              <strong class="font-semibold text-navy">Automated Pipelines:</strong> Every release is passed through integrated CI/CD chains, scanning for security vulnerabilities and coverage.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-16 px-6 bg-slate-50 border-t border-stripe-border/50 text-center transition-colors duration-300" id="dev-cta">
+    <div class="max-w-3xl mx-auto space-y-6">
+      <h3 class="text-2xl font-light text-navy">Ready to build your bespoke application?</h3>
+      <p class="text-slate-500 font-light leading-relaxed max-w-xl mx-auto">
+        Let’s sit down, review your specifications, and design an efficient engineering roadmap tailored to your operations.
+      </p>
+      <div class="pt-2">
+        <a href="../gainfotech_redesign_preview.html#contact" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-6 py-3 rounded-md shadow-stripe transition-colors">
+          Get Started Today
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPACT FOOTER -->
+  <footer class="bg-white border-t border-stripe-border/50 py-12 px-6 transition-colors duration-300" id="main-footer">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-slate-400 font-light">
+      <div class="flex items-center gap-3">
+        <img src="https://www.gainfotech.com/images/gainfotech.png" alt="GA Infotech" class="h-8 w-auto object-contain opacity-60" onerror="this.outerHTML='<span class=\'font-sans text-sm font-bold text-slate-400\'>GA INFOTECH</span>'">
+        <span>© 2026 GA Infotech, LLC. All rights reserved.</span>
+      </div>
+      <div class="flex flex-wrap gap-6">
+        <a href="../gainfotech_redesign_preview.html#contact" class="hover:text-stripe-purple transition-colors">Contact</a>
+        <a href="#" class="hover:text-stripe-purple transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-stripe-purple transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dark Mode Toggle Logic -->
+  <script>
+    let isDark = false;
+    function toggleDarkMode() {
+      isDark = !isDark;
+      const nav = document.getElementById('main-nav');
+      const footer = document.getElementById('main-footer');
+      const hero = document.getElementById('hero');
+      const ctaSection = document.getElementById('dev-cta');
+      const body = document.body;
+      
+      if (isDark) {
+        body.classList.add('bg-navy-dark', 'text-slate-300');
+        body.classList.remove('text-slate-700');
+        
+        nav.classList.add('bg-navy-dark/90', 'border-white/10');
+        nav.classList.remove('bg-white/80', 'border-stripe-border/50');
+
+        footer.classList.add('bg-navy-dark', 'border-white/10');
+        footer.classList.remove('bg-white', 'border-stripe-border/50');
+        
+        hero.style.background = 'radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.2) 0%, rgba(3, 13, 26, 0) 50%), #030d1a';
+        
+        ctaSection.classList.add('bg-navy-deep', 'border-white/10');
+        ctaSection.classList.remove('bg-slate-50', 'border-stripe-border/50');
+        
+        document.querySelectorAll('h1, h2, h3, h4').forEach(el => {
+          if (!el.classList.contains('text-white') && !el.classList.contains('text-stripe-purple') && !el.classList.contains('text-stripe-magenta')) {
+            el.classList.add('text-slate-100');
+          }
+        });
+        document.querySelectorAll('.bg-white').forEach(el => {
+          if (el !== nav && el !== footer) {
+            el.classList.add('bg-navy/40', 'border-white/10');
+            el.classList.remove('bg-white', 'border-stripe-border');
+          }
+        });
+        document.querySelectorAll('.bg-slate-50').forEach(el => {
+          if (el !== ctaSection) {
+            el.classList.add('bg-navy/20', 'border-white/5');
+            el.classList.remove('bg-slate-50', 'border-stripe-border');
+          }
+        });
+      } else {
+        body.classList.remove('bg-navy-dark', 'text-slate-300');
+        body.classList.add('text-slate-700');
+        
+        nav.classList.remove('bg-navy-dark/90', 'border-white/10');
+        nav.classList.add('bg-white/80', 'border-stripe-border/50');
+
+        footer.classList.remove('bg-navy-dark', 'border-white/10');
+        footer.classList.add('bg-white', 'border-stripe-border/50');
+        
+        hero.style.background = 'radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.1) 0%, rgba(255, 255, 255, 0) 50%), #ffffff';
+        
+        ctaSection.classList.remove('bg-navy-deep', 'border-white/10');
+        ctaSection.classList.add('bg-slate-50', 'border-stripe-border/50');
+        
+        document.querySelectorAll('h1, h2, h3, h4').forEach(el => {
+          el.classList.remove('text-slate-100');
+        });
+        document.querySelectorAll('.bg-navy\\/40').forEach(el => {
+          el.classList.add('bg-white', 'border-stripe-border');
+          el.classList.remove('bg-navy/40', 'border-white/10');
+        });
+        document.querySelectorAll('.bg-navy\\/20').forEach(el => {
+          el.classList.add('bg-slate-50', 'border-stripe-border');
+          el.classList.remove('bg-navy/20', 'border-white/5');
+        });
+      }
+    }
+  </script>
 </body>
-
 </html>
