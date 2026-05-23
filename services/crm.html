@@ -45,6 +45,15 @@
         }
       }
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let pref = null;
+      try { pref = localStorage.getItem(THEME_STORAGE_KEY); } catch (_) {}
+      if (pref === 'dark' || pref === 'light') {
+        isDark = pref === 'dark';
+      }
+      syncThemeUI();
+    });
   </script>
   
   <style>
@@ -95,7 +104,7 @@
     <div class="flex items-center gap-4">
 
       <div class="h-4 w-px bg-white/10"></div>
-      <button onclick="toggleDarkMode()" class="hover:text-emerald-300 transition-colors">Toggle Dark/Light Mode</button>
+      <button onclick="toggleDarkMode()" class="hover:text-emerald-300 transition-colors">Dark mode</button>
     </div>
   </div>
 
@@ -400,8 +409,18 @@
   <!-- Dark Mode Toggle Logic -->
   <script>
     let isDark = false;
+    const THEME_STORAGE_KEY = 'ga-theme';
+    function syncThemeUI() {
+      document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+        btn.textContent = isDark ? 'Light mode' : 'Dark mode';
+        btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      });
+      try { localStorage.setItem(THEME_STORAGE_KEY, isDark ? 'dark' : 'light'); } catch (_) {}
+    }
+
     function toggleDarkMode() {
       isDark = !isDark;
+      syncThemeUI();
       const nav = document.getElementById('main-nav');
       const footer = document.getElementById('main-footer');
       const hero = document.getElementById('hero');
@@ -409,6 +428,7 @@
       const body = document.body;
       
       body.classList.toggle('dark-theme', isDark);
+      syncThemeUI();
       
       if (isDark) {
         body.classList.add('bg-navy-dark', 'text-slate-300');
@@ -470,6 +490,15 @@
         });
       }
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let pref = null;
+      try { pref = localStorage.getItem(THEME_STORAGE_KEY); } catch (_) {}
+      if (pref === 'dark' || pref === 'light') {
+        isDark = pref === 'dark';
+      }
+      syncThemeUI();
+    });
   </script>
 </body>
 </html>

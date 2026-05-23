@@ -74,11 +74,57 @@
       transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
       filter: drop-shadow(0 1px 1px rgba(15, 23, 42, 0.12));
     }
-    @media (prefers-color-scheme: dark) {
-      .brand-logo {
-        filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
-      }
+    .dark-theme .brand-logo {
+      filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
     }
+    body.dark-theme {
+      background: #030d1a;
+      color: #cbd5e1;
+    }
+    body.dark-theme .hero-glow {
+      background: radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.18) 0%, rgba(3, 13, 26, 0) 55%), #030d1a;
+    }
+    body.dark-theme .bg-white,
+    body.dark-theme .bg-white\/80,
+    body.dark-theme .bg-white\/70,
+    body.dark-theme .bg-white\/5,
+    body.dark-theme .bg-white\/10 {
+      background-color: rgba(10, 25, 47, 0.9) !important;
+    }
+    body.dark-theme .bg-slate-50,
+    body.dark-theme .bg-slate-50\/50,
+    body.dark-theme .bg-slate-50\/60,
+    body.dark-theme .bg-slate-50\/40 {
+      background-color: #061b31 !important;
+    }
+    body.dark-theme .bg-navy,
+    body.dark-theme .bg-navy-brand,
+    body.dark-theme .bg-navy-dark,
+    body.dark-theme .bg-navy-deep {
+      background-color: #030d1a !important;
+    }
+    body.dark-theme .text-navy,
+    body.dark-theme .text-navy:hover,
+    body.dark-theme .hover\:text-navy:hover {
+      color: #f8fafc !important;
+    }
+    body.dark-theme .text-slate-700,
+    body.dark-theme .text-slate-600,
+    body.dark-theme .text-slate-500,
+    body.dark-theme .text-slate-400 {
+      color: #cbd5e1 !important;
+    }
+    body.dark-theme .border-stripe-border,
+    body.dark-theme .border-stripe-border\/50,
+    body.dark-theme .border-white\/10 {
+      border-color: rgba(255, 255, 255, 0.12) !important;
+    }
+    body.dark-theme .shadow-stripe,
+    body.dark-theme .shadow-stripe-sm {
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 40px -20px !important;
+    }
+    body.dark-theme .text-slate-300 { color: #cbd5e1 !important; }
+
   </style>
 </head>
 <body class="text-slate-700 antialiased font-sans">
@@ -109,7 +155,10 @@
       </nav>
 
       <!-- CTA Action Button -->
-      <div>
+      <div class="flex items-center gap-3">
+        <button onclick="toggleTheme()" data-theme-toggle aria-pressed="false" class="inline-flex items-center justify-center text-sm font-medium text-navy bg-white border border-stripe-border hover:bg-slate-50 px-4 py-2.5 rounded-md shadow-stripe-sm transition-all duration-300">
+          Dark mode
+        </button>
         <a href="https://www.linkedin.com/in/harpalgujral" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-5 py-2.5 rounded-md shadow-stripe-sm hover:shadow-stripe transition-all duration-300">
           Get Started
         </a>
@@ -258,6 +307,28 @@
       </div>
     </div>
   </footer>
+
+
+  <script>
+    const THEME_STORAGE_KEY = 'ga-theme';
+    function setTheme(isDark) {
+      document.body.classList.toggle('dark-theme', isDark);
+      document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+        btn.textContent = isDark ? 'Light mode' : 'Dark mode';
+        btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      });
+      try { localStorage.setItem(THEME_STORAGE_KEY, isDark ? 'dark' : 'light'); } catch (_) {}
+    }
+    function toggleTheme() {
+      setTheme(!document.body.classList.contains('dark-theme'));
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      let pref = null;
+      try { pref = localStorage.getItem(THEME_STORAGE_KEY); } catch (_) {}
+      const wantsDark = pref ? pref === 'dark' : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(wantsDark);
+    });
+  </script>
 
 </body>
 </html>
