@@ -79,14 +79,8 @@
   <!-- Interactive Demo Header / Controls -->
   <div class="bg-navy text-white text-xs px-4 py-2 flex flex-wrap justify-between items-center border-b border-white/10 relative z-50">
     <div class="flex items-center gap-2"><span class="text-slate-400">Global Enterprise & IT Solutions</span>
-      
-
     </div>
-    <div class="flex items-center gap-4">
-
-      <div class="h-4 w-px bg-white/10"></div>
-      <button onclick="toggleDarkMode()" class="hover:text-emerald-300 transition-colors">Toggle Dark/Light Mode</button>
-    </div>
+    <div class="flex items-center gap-4"></div>
   </div>
 
   <!-- STICKY BLURRED NAVIGATION -->
@@ -454,58 +448,5 @@
     </div>
   </footer>
 
-  <!-- Dark Mode Toggle Logic (Simple JavaScript simulation) -->
-  <script>
-    let isDark = false;
-    function toggleDarkMode() {
-      isDark = !isDark;
-      const nav = document.getElementById('main-nav');
-      const hero = document.getElementById('hero');
-      const services = document.getElementById('services');
-      const contact = document.getElementById('contact');
-      const body = document.body;
-      
-      if (isDark) {
-        body.classList.add('bg-navy-dark', 'text-slate-300');
-        body.classList.remove('text-slate-700');
-        
-        nav.classList.add('bg-navy-dark/90', 'border-white/10');
-        nav.classList.remove('bg-white/80', 'border-stripe-border/50');
-        
-        hero.style.background = 'radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.2) 0%, rgba(3, 13, 26, 0) 60%), #030d1a';
-        
-        services.classList.add('bg-navy-dark');
-        services.classList.remove('bg-white');
-        
-        contact.classList.add('bg-navy-dark');
-        contact.classList.remove('bg-slate-50');
-        
-        // Update headers and text colors programmatically
-        document.querySelectorAll('h1, h2, h3, h4').forEach(el => {
-          if (!el.classList.contains('text-white') && !el.classList.contains('text-stripe-purple') && !el.classList.contains('text-stripe-magenta')) {
-            el.classList.add('text-slate-100');
-          }
-        });
-      } else {
-        body.classList.remove('bg-navy-dark', 'text-slate-300');
-        body.classList.add('text-slate-700');
-        
-        nav.classList.remove('bg-navy-dark/90', 'border-white/10');
-        nav.classList.add('bg-white/80', 'border-stripe-border/50');
-        
-        hero.style.background = 'radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.12) 0%, rgba(255, 255, 255, 0) 60%), #ffffff';
-        
-        services.classList.remove('bg-navy-dark');
-        services.classList.add('bg-white');
-        
-        contact.classList.remove('bg-navy-dark');
-        contact.classList.add('bg-slate-50');
-        
-        document.querySelectorAll('h1, h2, h3, h4').forEach(el => {
-          el.classList.remove('text-slate-100');
-        });
-      }
-    }
-  </script>
 </body>
 </html>
