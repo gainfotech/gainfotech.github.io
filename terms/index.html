@@ -153,6 +153,13 @@
   </style>
 </head>
 <body class="text-slate-700 antialiased font-sans bg-white">
+  <!-- Interactive Demo Header / Controls -->
+  <div class="bg-navy text-white text-xs px-4 py-2 flex items-center border-b border-white/10 relative z-50">
+    <div class="flex items-center gap-2"><span class="text-slate-400">Global Enterprise & IT Solutions</span>
+    </div>
+    <button onclick="toggleTheme()" data-theme-toggle aria-pressed="false" class="theme-toggle ml-auto text-[11px] font-medium text-white/80 hover:text-white transition-colors">Dark mode</button>
+  </div>
+
   <!-- NAVIGATION -->
   <header class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-stripe-border/50 z-40 transition-colors duration-300" id="main-nav">
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -170,7 +177,6 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <button onclick="toggleTheme()" data-theme-toggle aria-pressed="false" class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-navy bg-white/95 border border-stripe-border px-4 py-2.5 rounded-full shadow-stripe-sm hover:shadow-stripe transition-all duration-300 hover:bg-slate-50 ring-1 ring-black/5">Dark mode</button>
         <a href="https://www.linkedin.com/in/harpalgujral" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-5 py-2.5 rounded-md shadow-stripe-sm hover:shadow-stripe transition-all duration-300">
           Get Started
         </a>
