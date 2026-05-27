@@ -1,342 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us: GA Infotech</title>
-  
-  <!-- Modern Fonts: Source Sans 3 & Source Code Pro -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght=300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS for modern layouts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Source Sans 3"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-            mono: ['"Source Code Pro"', 'monospace'],
-          },
-          colors: {
-            navy: {
-              DEFAULT: '#061b31',
-              dark: '#030d1a',
-              brand: '#1c1e54',
-              deep: '#0a192f',
-            },
-            stripe: {
-              purple: '#533afd',
-              hover: '#4434d4',
-              ruby: '#ea2261',
-              magenta: '#f96bee',
-              slate: '#64748d',
-              border: '#e5edf5',
-            }
-          },
-          boxShadow: {
-            'stripe': 'rgba(50, 50, 93, 0.15) 0px 30px 60px -30px, rgba(0, 0, 0, 0.08) 0px 18px 36px -18px',
-            'stripe-hover': 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.12) 0px 30px 60px -30px',
-            'stripe-sm': 'rgba(50, 50, 93, 0.05) 0px 2px 5px 0px, rgba(0, 0, 0, 0.03) 0px 1px 1.5px 0px',
-          }
-        }
-      }
-    }
-  </script>
-  
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    .hero-glow {
-      background: radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.1) 0%, rgba(255, 255, 255, 0) 50%), #ffffff;
-    }
-    
-    .nav-link-hover::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: #533afd;
-      transition: width 0.25s ease-out;
-    }
-    .nav-link-hover:hover::after {
-      width: 100%;
-    }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GA Infotech - About us</title>
+    <meta name="description" content="GA Infotech is an Atlanta based information technology company. We specialize in CRM implementations and also do custom software development for small and medium sized businesses.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-    .brand-logo {
-      transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
-      filter: drop-shadow(0 1px 1px rgba(15, 23, 42, 0.12));
-    }
-    .dark-theme .brand-logo {
-      filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
-    }
-    body.dark-theme {
-      background: #030d1a;
-      color: #cbd5e1;
-    }
-    body.dark-theme .hero-glow {
-      background: radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.18) 0%, rgba(3, 13, 26, 0) 55%), #030d1a;
-    }
-    body.dark-theme .bg-white,
-    body.dark-theme .bg-white\/80,
-    body.dark-theme .bg-white\/70,
-    body.dark-theme .bg-white\/5,
-    body.dark-theme .bg-white\/10 {
-      background-color: rgba(10, 25, 47, 0.9) !important;
-    }
-    body.dark-theme .bg-slate-50,
-    body.dark-theme .bg-slate-50\/50,
-    body.dark-theme .bg-slate-50\/60,
-    body.dark-theme .bg-slate-50\/40 {
-      background-color: #061b31 !important;
-    }
-    body.dark-theme .bg-navy,
-    body.dark-theme .bg-navy-brand,
-    body.dark-theme .bg-navy-dark,
-    body.dark-theme .bg-navy-deep {
-      background-color: #030d1a !important;
-    }
-    body.dark-theme .text-navy,
-    body.dark-theme .text-navy:hover,
-    body.dark-theme .hover\:text-navy:hover {
-      color: #f8fafc !important;
-    }
-    body.dark-theme .text-slate-700,
-    body.dark-theme .text-slate-600,
-    body.dark-theme .text-slate-500,
-    body.dark-theme .text-slate-400 {
-      color: #cbd5e1 !important;
-    }
-    body.dark-theme .border-stripe-border,
-    body.dark-theme .border-stripe-border\/50,
-    body.dark-theme .border-white\/10 {
-      border-color: rgba(255, 255, 255, 0.12) !important;
-    }
-    body.dark-theme .shadow-stripe,
-    body.dark-theme .shadow-stripe-sm {
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 40px -20px !important;
-    }
-    body.dark-theme .text-slate-300 { color: #cbd5e1 !important; }
-    .theme-toggle {
-      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-    }
-    body.dark-theme .theme-toggle {
-      background: rgba(255, 255, 255, 0.96) !important;
-      color: #061b31 !important;
-      border-color: rgba(226, 232, 240, 0.95) !important;
-      box-shadow: rgba(15, 23, 42, 0.18) 0px 8px 18px -10px !important;
-    }
-    body.dark-theme .theme-toggle:hover {
-      background: #ffffff !important;
-    }
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-  </style>
-</head>
-<body class="text-slate-700 antialiased font-sans">
-  <!-- Interactive Demo Header / Controls -->
-  <div class="bg-navy text-white text-xs px-4 py-2 flex items-center border-b border-white/10 relative z-50">
-    <div class="flex items-center gap-2"><span class="text-slate-400">Global Enterprise & IT Solutions</span>
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center align-items-center py-3 mb-4">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="/images/gainfotech.png" alt="GA Infotech" height="70">
+        </a>
+  
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link active" aria-current="about">About</a></li>
+          <li class="nav-item"><a href="mailto:support@gainfotech.com" rel="nofollow" class="nav-link">Contact Us</a></li>
+        </ul>
+      </header>
     </div>
-    <button onclick="toggleTheme()" data-theme-toggle aria-pressed="false" class="theme-toggle ml-auto text-[11px] font-medium text-white/80 hover:text-white transition-colors">Dark mode</button>
-  </div>
 
-  <!-- STICKY BLURRED NAVIGATION -->
-  <header class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-stripe-border/50 z-40 transition-colors duration-300" id="main-nav">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="../" class="flex items-center gap-3 group">
-        <div class="flex items-center">
-          <img src="https://www.gainfotech.com/images/gainfotech.png" alt="GA Infotech Logo" class="brand-logo h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.outerHTML='<span class=\'font-sans text-2xl font-bold tracking-tight text-navy\'>GA <span class=\'text-stripe-purple\'>INFOTECH</span></span>'">
-        </div>
-      </a>
-
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="../" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">Home</a>
-        <a href="../services/" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">Services</a>
-        <a href="../about/" class="text-sm font-medium text-stripe-purple transition-colors relative nav-link-hover py-1">About Us</a>
-        <a href="https://www.linkedin.com/in/harpalgujral" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">Contact</a>
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
+          <li class="breadcrumb-item">
+            <a class="link-body-emphasis text-decoration-none" href="/">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">About</a>
+          </li>
+        </ol>
       </nav>
 
-      <!-- CTA Action Button -->
-      <div class="flex items-center gap-3">
-        <a href="https://www.linkedin.com/in/harpalgujral" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-5 py-2.5 rounded-md shadow-stripe-sm hover:shadow-stripe transition-all duration-300">
-          Get Started
-        </a>
+      <h1 class="mt-5">About</h1>
+      <div class="fs-6 mt-3">
+        <p>GA Infotech is an Atlanta based information technology company. We specialize in CRM implementations and also do custom software development for small and medium sized businesses.</p>
+        <p>With years of hands-on IT experience, we have a team of technical consultants, architects, software developers and project management professionals with specific interests in using technology to organize information and improve processes that help businesses grow.</p>
+        <p>Our implementations encompass a wide variety of business applications. At GA Infotech we strongly believe in agile methodologies and strive to implement simple solutions for complicated problems. We use well-proven design principles in conjunction with new and emerging technologies for architecting all our solutions.</p>      
+        <p>Please feel free to reach out and <a href="mailto:support@gainfotech.com" rel="nofollow">contact us</a> for more information.</p>
       </div>
     </div>
-  </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-glow pt-16 pb-20 px-6 relative overflow-hidden transition-colors duration-300">
-    <div class="max-w-6xl mx-auto text-center space-y-6">
-      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-stripe-purple/10 text-stripe-purple border border-stripe-purple/20">
-        Our Practice & Team
-      </span>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-navy leading-[1.1]" style="letter-spacing: -1.5px;">
-        The Senior Alternative in <br><span class="font-normal text-stripe-purple">Enterprise Engineering</span>.
-      </h1>
-      <p class="text-lg md:text-xl text-slate-500 font-light max-w-2xl mx-auto leading-relaxed">
-        GA Infotech is a technical advisory firm. We swap the overhead of big consultancies for senior leadership and fast execution.
-      </p>
-    </div>
-  </section>
-
-  <!-- THE STORY SECTION -->
-  <section class="py-20 px-6 bg-slate-50 border-y border-stripe-border/50 transition-colors duration-300" id="our-story">
-    <div class="max-w-4xl mx-auto space-y-8">
-      <div class="space-y-3 text-center">
-        <h2 class="text-xs font-semibold text-stripe-purple uppercase tracking-widest">Our Heritage</h2>
-        <h3 class="text-3xl font-light text-navy">Georgia Roots. Worldwide Reach.</h3>
-      </div>
-      
-      <div class="space-y-6 text-slate-600 font-light leading-relaxed text-base">
-        <p>
-          Headquartered in Atlanta, GA Infotech was founded to address a critical gap in the technology sector: the need for institutional-grade technical advisory that functions with the agility of a dedicated strategic partner.
-        </p>
-        <p>
-          We believe enterprise failures, especially in CRM, happen because of poor architecture, not a lack of resources. Led by <a href="https://www.linkedin.com/in/harpalgujral" target="_blank" rel="noopener noreferrer" class="text-stripe-purple hover:underline decoration-2 underline-offset-4">Harpal Gujral</a>, we fix legacy friction and bridge your data gaps.
-        </p>
-        <p>
-          Our firm manages a global collective of senior solution architects and specialist developers. We do not just implement software; we engineer the long-term technical integrity of your organization’s most valuable assets.
-        </p>
-      </div>
-
-      <!-- Quick Stats Block -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-stripe-border/50 text-center">
-        <div class="p-6 bg-white rounded-lg border border-stripe-border shadow-stripe-sm group hover:shadow-stripe transition-all duration-300">
-          <div class="h-12 w-12 bg-stripe-purple/10 text-stripe-purple rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-            </svg>
-          </div>
-          <span class="text-3xl font-light text-stripe-purple block">Atlanta</span>
-          <span class="text-[10px] uppercase text-slate-400 font-mono tracking-wider">USA Headquarters</span>
+    <div class="container mt-5">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+            <img src="/images/gainfotech.png" alt="GA Infotech" width="32" height="32">
+          </a>
+          <span class="mb-3 mb-md-0 text-body-secondary">© 2026 GA Infotech, LLC</span>
         </div>
-        <div class="p-6 bg-white rounded-lg border border-stripe-border shadow-stripe-sm group hover:shadow-stripe transition-all duration-300">
-          <div class="h-12 w-12 bg-stripe-purple/10 text-stripe-purple rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-            </svg>
-          </div>
-          <span class="text-3xl font-light text-stripe-purple block">Agile</span>
-          <span class="text-[10px] uppercase text-slate-400 font-mono tracking-wider">Milestone Execution</span>
-        </div>
-        <div class="p-6 bg-white rounded-lg border border-stripe-border shadow-stripe-sm group hover:shadow-stripe transition-all duration-300">
-          <div class="h-12 w-12 bg-stripe-purple/10 text-stripe-purple rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.905 59.905 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75c1.11 0 2.148.3 3.037.825m-6.75 3.325a5.981 5.981 0 0 1 3.038-5.1" />
-            </svg>
-          </div>
-          <span class="text-3xl font-light text-stripe-purple block">Senior</span>
-          <span class="text-[10px] uppercase text-slate-400 font-mono tracking-wider">Architectural Leadership</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRINCIPLES SECTOR (Agile Focus) -->
-  <section class="py-24 px-6 bg-white transition-colors duration-300">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-      
-      <div class="md:col-span-6 space-y-6">
-        <h3 class="text-xs font-semibold text-stripe-purple uppercase tracking-widest">Core Philosophy</h3>
-        <h4 class="text-3xl font-light text-navy leading-tight">Sophisticated simplicity.</h4>
-        <p class="text-slate-500 font-light leading-relaxed">
-          The primary risk to enterprise scalability is technical bloat. When systems are over-engineered, agility is sacrificed to maintenance, and the total cost of ownership (TCO) escalates.
-        </p>
-        <p class="text-slate-500 font-light leading-relaxed">
-          We mandate a "First Principles" approach to architecture. By focusing on clean integration patterns and resilient, documented infrastructures, we ensure that our solutions don't just solve today's bottleneck, but remain an asset for the next decade of growth.
-        </p>
-      </div>
-
-      <!-- Principles checklist -->
-      <div class="md:col-span-6 bg-slate-50 border border-stripe-border rounded-lg p-8 space-y-6">
-        <h4 class="text-lg font-medium text-navy border-b border-stripe-border pb-3">Our Operations Standards</h4>
-        <ul class="space-y-4 text-sm font-light">
-          <li class="flex items-start gap-3">
-            <span class="text-stripe-purple font-mono font-bold">✓</span>
-            <div>
-              <strong class="font-semibold text-navy">Direct Strategic Collaboration:</strong> You work side-by-side with senior architects who guide requirements with mature advice.
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-stripe-purple font-mono font-bold">✓</span>
-            <div>
-              <strong class="font-semibold text-navy">Agile Milestone Sprints:</strong> Sprints are structured in bi-weekly segments, with full client reviews, functional demos, and absolute transparency.
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-stripe-purple font-mono font-bold">✓</span>
-            <div>
-              <strong class="font-semibold text-navy">Secure Cloud-First Designs:</strong> Complete development integration runs inside fully sandboxed, highly protected cloud environments.
-            </div>
-          </li>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="mailto:support@gainfotech.com" rel="nofollow" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
+          <li class="nav-item"><a href="/privacy" rel="nofollow" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
+          <li class="nav-item"><a href="/terms" rel="nofollow" class="nav-link px-2 text-body-secondary">Terms Of Service</a></li>
         </ul>
-      </div>
-
+      </footer>
     </div>
-  </section>
 
-  <!-- CTA section -->
-  <section class="py-16 px-6 bg-slate-50 border-t border-stripe-border/50 text-center transition-colors duration-300" id="about-cta">
-    <div class="max-w-3xl mx-auto space-y-6">
-      <h3 class="text-2xl font-light text-navy">Let's discuss your next digital milestone.</h3>
-      <p class="text-slate-500 font-light leading-relaxed max-w-xl mx-auto">
-        Whether you are seeking custom enterprise automation, specialized IT consulting, or an end-to-end Salesforce pipeline optimization, we are ready to assist.
-      </p>
-      <div class="pt-2">
-        <a href="https://www.linkedin.com/in/harpalgujral" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-6 py-3 rounded-md shadow-stripe transition-colors">
-          Connect with Harpal & Team
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPACT FOOTER -->
-  <footer class="bg-white border-t border-stripe-border/50 py-12 px-6 transition-colors duration-300" id="main-footer">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-slate-400 font-light">
-      <div class="flex items-center gap-3">
-        <img src="https://www.gainfotech.com/images/gainfotech.png" alt="GA Infotech" class="brand-logo h-8 w-auto object-contain opacity-60" onerror="this.outerHTML='<span class=\'font-sans text-sm font-bold text-slate-400\'>GA INFOTECH</span>'">
-        <span>© 2026 GA Infotech, LLC. All rights reserved.</span>
-      </div>
-      <div class="flex flex-wrap gap-6">
-        <a href="https://www.linkedin.com/in/harpalgujral" target="_blank" rel="noopener noreferrer" class="hover:text-stripe-purple transition-colors">Contact</a>
-        <a href="/privacy" class="hover:text-stripe-purple transition-colors">Privacy Policy</a>
-        <a href="/terms" class="hover:text-stripe-purple transition-colors">Terms of Service</a>
-      </div>
-    </div>
-  </footer>
-
-
-  <script>
-    const THEME_STORAGE_KEY = 'ga-theme';
-    function setTheme(isDark) {
-      document.body.classList.toggle('dark-theme', isDark);
-      document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
-        btn.textContent = isDark ? 'Light mode' : 'Dark mode';
-        btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      });
-      try { localStorage.setItem(THEME_STORAGE_KEY, isDark ? 'dark' : 'light'); } catch (_) {}
-    }
-    function toggleTheme() {
-      setTheme(!document.body.classList.contains('dark-theme'));
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      let pref = null;
-      try { pref = localStorage.getItem(THEME_STORAGE_KEY); } catch (_) {}
-      const wantsDark = pref ? pref === 'dark' : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(wantsDark);
-    });
-  </script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
 </html>

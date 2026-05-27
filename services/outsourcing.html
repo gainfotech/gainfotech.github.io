@@ -1,408 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Global Outsourcing & Operations: GA Infotech</title>
-  
-  <!-- Modern Fonts: Source Sans 3 & Source Code Pro -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS for modern layouts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Source Sans 3"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-            mono: ['"Source Code Pro"', 'monospace'],
-          },
-          colors: {
-            navy: {
-              DEFAULT: '#061b31',
-              dark: '#030d1a',
-              brand: '#1c1e54',
-              deep: '#0a192f',
-            },
-            stripe: {
-              purple: '#533afd',
-              hover: '#4434d4',
-              ruby: '#ea2261',
-              magenta: '#f96bee',
-              slate: '#64748d',
-              border: '#e5edf5',
-            }
-          },
-          boxShadow: {
-            'stripe': 'rgba(50, 50, 93, 0.15) 0px 30px 60px -30px, rgba(0, 0, 0, 0.08) 0px 18px 36px -18px',
-            'stripe-hover': 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.12) 0px 30px 60px -30px',
-            'stripe-sm': 'rgba(50, 50, 93, 0.05) 0px 2px 5px 0px, rgba(0, 0, 0, 0.03) 0px 1px 1.5px 0px',
-          }
-        }
-      }
-    }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GA Infotech Outsourcing</title>
+  <meta name="description" content="GA Infotech can not only take your business process and optimize it with software, but we can also take the
+  burden of manual processes off your shoulders and delegate it to a world-wide team of service providers and manage the process for you.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-    document.addEventListener('DOMContentLoaded', () => {
-      let pref = null;
-      try { pref = localStorage.getItem(THEME_STORAGE_KEY); } catch (_) {}
-      if (pref === 'dark' || pref === 'light') {
-        isDark = pref === 'dark';
-      }
-      syncThemeUI();
-    });
-  </script>
-  
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    .hero-glow {
-      background: radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.1) 0%, rgba(255, 255, 255, 0) 50%), #ffffff;
-    }
-    
-    .nav-link-hover::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: #533afd;
-      transition: width 0.25s ease-out;
-    }
-    .nav-link-hover:hover::after {
-      width: 100%;
-    }
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 
-    .brand-logo {
-      transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
-      filter: drop-shadow(0 1px 1px rgba(15, 23, 42, 0.12));
-    }
-    .dark-theme .brand-logo {
-      filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
-    }
-    @media (prefers-color-scheme: dark) {
-      .brand-logo {
-        filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
-      }
-    }
-  </style>
 </head>
-<body class="text-slate-700 antialiased font-sans">
-  <!-- Interactive Demo Header / Controls -->
-  <div class="bg-navy text-white text-xs px-4 py-2 flex items-center border-b border-white/10 relative z-50">
-    <div class="flex items-center gap-2"><span class="text-slate-400">Global Enterprise & IT Solutions</span>
-    </div>
-    <button onclick="toggleTheme()" data-theme-toggle aria-pressed="false" class="theme-toggle ml-auto text-[11px] font-medium text-white/80 hover:text-white transition-colors">Dark mode</button>
-  </div>
 
-  <!-- STICKY BLURRED NAVIGATION -->
-  <header class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-stripe-border/50 z-40 transition-colors duration-300" id="main-nav">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="../" class="flex items-center gap-3 group">
-        <div class="flex items-center">
-          <img src="https://www.gainfotech.com/images/gainfotech.png" alt="GA Infotech Logo" class="brand-logo h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.outerHTML='<span class=\'font-sans text-2xl font-bold tracking-tight text-navy\'>GA <span class=\'text-stripe-purple\'>INFOTECH</span></span>'">
-        </div>
+<body>
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center align-items-center py-3 mb-4">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img src="/images/gainfotech.png" alt="GA Infotech" height="70">
       </a>
 
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="../" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">Home</a>
-        <a href="../services/" class="text-sm font-medium text-stripe-purple transition-colors relative nav-link-hover py-1">Services</a>
-        <a href="../about/" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">About Us</a>
-        <a href="https://www.linkedin.com/in/harpalgujral" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">Contact</a>
-      </nav>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="mailto:support@gainfotech.com" rel="nofollow" class="nav-link">Contact Us</a></li>
+      </ul>
+    </header>
+  </div>
 
-      <!-- CTA Action Button -->
-      <div class="flex items-center gap-3">
-        <a href="https://www.linkedin.com/in/harpalgujral" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-5 py-2.5 rounded-md shadow-stripe-sm hover:shadow-stripe transition-all duration-300">
-          Get Started
-        </a>
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
+        <li class="breadcrumb-item">
+          <a class="link-body-emphasis text-decoration-none" href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a class="link-body-emphasis text-decoration-none" href="/services">Services</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">Outsourcing</a>
+        </li>
+      </ol>
+    </nav>
+
+    <div class="row flex-lg-row-reverse row-cols-lg-2 align-items-center g-5 mt-3">
+      <div classs="col-lg-6">
+        <img src="/images/outsourcing.jpg" alt="Outsourcing" class="img-fluid" />
       </div>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-glow pt-16 pb-20 px-6 relative overflow-hidden transition-colors duration-300">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <div class="lg:col-span-7 space-y-6 text-left">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-stripe-purple/10 text-stripe-purple border border-stripe-purple/20">
-          Global Delivery Infrastructure
-        </span>
-        <h1 class="text-4xl md:text-5xl font-light tracking-tight text-navy leading-[1.1]" style="letter-spacing: -1.5px;">
-          Operational Delegation with <br><span class="font-normal text-stripe-purple">Institutional Accountability</span>.
-        </h1>
-        <p class="text-lg text-slate-500 font-light leading-relaxed">
-          Access elite global technical talent through a secure, local liaison framework. We provide the senior oversight and architectural governance required to manage distributed teams with precision.
-        </p>
-        <div class="pt-2">
-          <a href="https://www.linkedin.com/in/harpalgujral" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-6 py-3 rounded-md shadow-stripe transition-colors">
-            Configure Your Remote Team
-          </a>
-        </div>
-      </div>
-
-      <!-- Coordinated timezone sync visual representation -->
-      <div class="lg:col-span-5 relative">
-        <div class="bg-white rounded-lg border border-stripe-border shadow-stripe p-6 space-y-4 max-w-md mx-auto">
-          <div class="flex items-center justify-between border-b border-stripe-border pb-3">
-            <div>
-              <h4 class="text-xs font-semibold text-navy font-mono">Global Office Sync Map</h4>
-              <p class="text-[10px] text-slate-400">Coordinated 24-Hour Coverage</p>
-            </div>
-            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 font-mono">ACTIVE</span>
+      <div class="col-lg-6">
+        <div class="d-flex mt-5 pb-3 border-bottom">
+          <div
+            class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-globe-americas"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z" />
+            </svg>
           </div>
+          <h1>Outsourcing</h1>
+        </div>
 
-          <div class="space-y-3">
-            <!-- Atlanta HQ -->
-            <div class="p-3 bg-slate-50 border border-stripe-border rounded flex justify-between items-center">
-              <div>
-                <span class="text-xs font-bold text-navy block">Atlanta, USA (HQ)</span>
-                <span class="text-[10px] text-slate-400">Account Liaisons & Architects</span>
-              </div>
-              <span class="text-xs font-mono font-bold text-stripe-purple">EST Zone</span>
-            </div>
-
-            <!-- South Asia Delivery -->
-            <div class="p-3 bg-slate-50 border border-stripe-border rounded flex justify-between items-center">
-              <div>
-                <span class="text-xs font-bold text-navy block">Vetted Network (India)</span>
-                <span class="text-[10px] text-slate-400">Heavy Dev & Core Engineering</span>
-              </div>
-              <span class="text-xs font-mono font-bold text-stripe-purple">IST Zone</span>
-            </div>
-
-            <!-- SE Asia Ops -->
-            <div class="p-3 bg-slate-50 border border-stripe-border rounded flex justify-between items-center">
-              <div>
-                <span class="text-xs font-bold text-navy block">East Asia Practice (Philippines/VN)</span>
-                <span class="text-[10px] text-slate-400">Process Ops & Technical Support</span>
-              </div>
-              <span class="text-xs font-mono font-bold text-stripe-purple">PST Zone</span>
-            </div>
-          </div>
+        <div class="mt-3">
+          <p>GA Infotech can not only take your business process and optimize it with software, but we can also take the
+            burden of manual processes off your shoulders and delegate it to a world-wide team of service providers and
+            manage the process for you.</p>
+          <p>If you need your marketing efforts moved forward or you need a helping hand with supporting your customer’s and
+            their interactions, consider GA Infotech your local&nbsp;liaison&nbsp;to a global team of service providers in
+            India,&nbsp;Philippines, Vietnam and other low-cost high-value locations.&nbsp;We have partnered with more than
+            20 organizations world-wide with whom we have formed a long running relationship</p>
+          <p>By working with us as your local outsourcing partner, you can avoid going through the effort of creating
+            relationships with teams in remote off-shore locations or having to manage people in different time-zones with
+            different work cultures.</p>
         </div>
       </div>
-
     </div>
-  </section>
+  </div>
 
-  <!-- THE OUTSOURCING ROADMAP -->
-  <section class="py-20 px-6 bg-slate-50 border-y border-stripe-border/50 transition-colors duration-300" id="outsourcing-pillars">
-    <div class="max-w-6xl mx-auto space-y-16">
-      
-      <div class="text-center space-y-4 max-w-2xl mx-auto">
-        <h2 class="text-xs font-semibold text-stripe-purple uppercase tracking-widest">Our Global Advantage</h2>
-        <h3 class="text-3xl font-light text-navy">Global Scale. Local Governance.</h3>
-        <p class="text-slate-500 font-light text-base">We mitigate the risks of distributed delivery by providing US-based technical leadership and institutional-grade accountability.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Vetted Technical Network -->
-        <div class="bg-white rounded-lg border border-stripe-border p-8 shadow-stripe-sm space-y-4">
-          <div class="h-10 w-10 bg-stripe-purple/10 text-stripe-purple rounded-lg flex items-center justify-center font-bold">🌍</div>
-          <h4 class="text-xl font-medium text-navy">Elite Global Collectives</h4>
-          <p class="text-sm text-slate-500 font-light leading-relaxed">
-            We orchestrate a strictly-vetted professional network across India, the Philippines, and Vietnam. Our collective includes senior engineers and operational specialists ready to extend your core capacity.
-          </p>
-        </div>
-
-        <!-- US-Based Accountability -->
-        <div class="bg-white rounded-lg border border-stripe-border p-8 shadow-stripe-sm space-y-4">
-          <div class="h-10 w-10 bg-stripe-purple/10 text-stripe-purple rounded-lg flex items-center justify-center font-bold">🇺🇸</div>
-          <h4 class="text-xl font-medium text-navy">Senior Architectural Liaison</h4>
-          <p class="text-sm text-slate-500 font-light leading-relaxed">
-            Eliminate the coordination overhead of offshoring. You collaborate directly with our Atlanta-based architects, who assume full responsibility for delivery, quality, and technical integrity.
-          </p>
-        </div>
-
-        <!-- Dynamic Coverage -->
-        <div class="bg-white rounded-lg border border-stripe-border p-8 shadow-stripe-sm space-y-4">
-          <div class="h-10 w-10 bg-stripe-purple/10 text-stripe-purple rounded-lg flex items-center justify-center font-bold">⏳</div>
-          <h4 class="text-xl font-medium text-navy">Continuous Delivery Cycles</h4>
-          <p class="text-sm text-slate-500 font-light leading-relaxed">
-            Accelerate project timelines through synchronized global workflows. Our distributed hubs ensure continuous engineering and operational support across all timezones, maximizing institutional momentum.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- RISK MITIGATION STEPS -->
-  <section class="py-24 px-6 bg-white transition-colors duration-300">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-      
-      <div class="md:col-span-6 space-y-6">
-        <h3 class="text-xs font-semibold text-stripe-purple uppercase tracking-widest">Process Governance</h3>
-        <h4 class="text-3xl font-light text-navy leading-tight">Eliminating cultural and timezone barriers.</h4>
-        <p class="text-slate-500 font-light leading-relaxed">
-          Many offshore projects derail due to poor communication and ambiguous specifications. We bypass this entirely by establishing strict governance, daily standard standups, structured Jira tracking, and Atlanta-led audits.
-        </p>
-        <p class="text-slate-500 font-light leading-relaxed">
-          Every remote line of code and automated process layer is audited by a senior GA Infotech systems architect before being merged into your production servers.
-        </p>
-      </div>
-
-      <div class="md:col-span-6 bg-slate-50 border border-stripe-border rounded-lg p-8 space-y-4">
-        <h4 class="text-sm font-semibold text-navy uppercase tracking-wider font-mono border-b border-stripe-border pb-3">Our Quality Gates</h4>
-        <ul class="space-y-4 text-xs font-mono text-slate-600">
-          <li class="flex items-start gap-3">
-            <span class="text-emerald-500">✔</span>
-            <div>
-              <strong class="text-navy font-sans">100% Secure Environment:</strong> Complete deployment under client-controlled AWS/Azure boundaries and strict NDAs.
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-emerald-500">✔</span>
-            <div>
-              <strong class="text-navy font-sans">Direct Liaison Channels:</strong> Communication flows directly through your Atlanta account manager—no timezone friction.
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-emerald-500">✔</span>
-            <div>
-              <strong class="text-navy font-sans">Automated CI/CD Gates:</strong> Robust code coverage scans, sonar checks, and review barriers prevent low-quality inputs.
-            </div>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA section -->
-  <section class="py-16 px-6 bg-slate-50 border-t border-stripe-border/50 text-center transition-colors duration-300" id="outsourcing-cta">
-    <div class="max-w-3xl mx-auto space-y-6">
-      <h3 class="text-2xl font-light text-navy">Ready to safely scale your engineering output?</h3>
-      <p class="text-slate-500 font-light leading-relaxed max-w-xl mx-auto">
-        Let’s sit down, review your technical resource demands, and build a coordinated offshore engineering team backed by Atlanta accountability.
-      </p>
-      <div class="pt-2">
-        <a href="https://www.linkedin.com/in/harpalgujral" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-6 py-3 rounded-md shadow-stripe transition-colors">
-          Get Started Today
+  <div class="container mt-5">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <img src="/images/gainfotech.png" alt="GA Infotech" width="32" height="32">
         </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2026 GA Infotech, LLC</span>
       </div>
-    </div>
-  </section>
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="mailto:support@gainfotech.com" rel="nofollow" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
+        <li class="nav-item"><a href="/privacy" rel="nofollow" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
+        <li class="nav-item"><a href="/terms" rel="nofollow" class="nav-link px-2 text-body-secondary">Terms Of Service</a></li>
+      </ul>
+    </footer>
+  </div>
 
-  <!-- COMPACT FOOTER -->
-  <footer class="bg-white border-t border-stripe-border/50 py-12 px-6 transition-colors duration-300" id="main-footer">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-slate-400 font-light">
-      <div class="flex items-center gap-3">
-        <img src="https://www.gainfotech.com/images/gainfotech.png" alt="GA Infotech" class="brand-logo h-8 w-auto object-contain opacity-60" onerror="this.outerHTML='<span class=\'font-sans text-sm font-bold text-slate-400\'>GA INFOTECH</span>'">
-        <span>© 2026 GA Infotech, LLC. All rights reserved.</span>
-      </div>
-      <div class="flex flex-wrap gap-6">
-        <a href="https://www.linkedin.com/in/harpalgujral" class="hover:text-stripe-purple transition-colors">Contact</a>
-        <a href="/privacy" class="hover:text-stripe-purple transition-colors">Privacy Policy</a>
-        <a href="/terms" class="hover:text-stripe-purple transition-colors">Terms of Service</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Dark Mode Toggle Logic -->
-  <script>
-    let isDark = false;
-    const THEME_STORAGE_KEY = 'ga-theme';
-    function syncThemeUI() {
-      document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
-        btn.textContent = isDark ? 'Light mode' : 'Dark mode';
-        btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      });
-      try { localStorage.setItem(THEME_STORAGE_KEY, isDark ? 'dark' : 'light'); } catch (_) {}
-    }
-
-    function toggleDarkMode() {
-      isDark = !isDark;
-      syncThemeUI();
-      const nav = document.getElementById('main-nav');
-      const footer = document.getElementById('main-footer');
-      const hero = document.getElementById('hero');
-      const ctaSection = document.getElementById('outsourcing-cta');
-      const body = document.body;
-      
-      body.classList.toggle('dark-theme', isDark);
-      syncThemeUI();
-      
-      if (isDark) {
-        body.classList.add('bg-navy-dark', 'text-slate-300');
-        body.classList.remove('text-slate-700');
-        
-        nav.classList.add('bg-navy-dark/90', 'border-white/10');
-        nav.classList.remove('bg-white/80', 'border-stripe-border/50');
-
-        footer.classList.add('bg-navy-dark', 'border-white/10');
-        footer.classList.remove('bg-white', 'border-stripe-border/50');
-        
-        hero.style.background = 'radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.2) 0%, rgba(3, 13, 26, 0) 50%), #030d1a';
-        
-        ctaSection.classList.add('bg-navy-deep', 'border-white/10');
-        ctaSection.classList.remove('bg-slate-50', 'border-stripe-border/50');
-        
-        document.querySelectorAll('h1, h2, h3, h4').forEach(el => {
-          if (!el.classList.contains('text-white') && !el.classList.contains('text-stripe-purple') && !el.classList.contains('text-stripe-magenta')) {
-            el.classList.add('text-slate-100');
-          }
-        });
-        document.querySelectorAll('.bg-white').forEach(el => {
-          if (el !== nav && el !== footer) {
-            el.classList.add('bg-navy/40', 'border-white/10');
-            el.classList.remove('bg-white', 'border-stripe-border');
-          }
-        });
-        document.querySelectorAll('.bg-slate-50').forEach(el => {
-          if (el !== ctaSection) {
-            el.classList.add('bg-navy/20', 'border-white/5');
-            el.classList.remove('bg-slate-50', 'border-stripe-border');
-          }
-        });
-      } else {
-        body.classList.remove('bg-navy-dark', 'text-slate-300');
-        body.classList.add('text-slate-700');
-        
-        nav.classList.remove('bg-navy-dark/90', 'border-white/10');
-        nav.classList.add('bg-white/80', 'border-stripe-border/50');
-
-        footer.classList.remove('bg-navy-dark', 'border-white/10');
-        footer.classList.add('bg-white', 'border-stripe-border/50');
-        
-        hero.style.background = 'radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.1) 0%, rgba(255, 255, 255, 0) 50%), #ffffff';
-        
-        ctaSection.classList.remove('bg-navy-deep', 'border-white/10');
-        ctaSection.classList.add('bg-slate-50', 'border-stripe-border/50');
-        
-        document.querySelectorAll('h1, h2, h3, h4').forEach(el => {
-          el.classList.remove('text-slate-100');
-        });
-        document.querySelectorAll('.bg-navy\\/40').forEach(el => {
-          el.classList.add('bg-white', 'border-stripe-border');
-          el.classList.remove('bg-navy/40', 'border-white/10');
-        });
-        document.querySelectorAll('.bg-navy\\/20').forEach(el => {
-          el.classList.add('bg-slate-50', 'border-stripe-border');
-          el.classList.remove('bg-navy/20', 'border-white/5');
-        });
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      let pref = null;
-      try { pref = localStorage.getItem(THEME_STORAGE_KEY); } catch (_) {}
-      if (pref === 'dark' || pref === 'light') {
-        isDark = pref === 'dark';
-      }
-      syncThemeUI();
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

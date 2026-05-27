@@ -1,266 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — GA Infotech</title>
-  
-  <!-- Modern Fonts: Source Sans 3 & Source Code Pro -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS for modern layouts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Source Sans 3"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-            mono: ['"Source Code Pro"', 'monospace'],
-          },
-          colors: {
-            navy: {
-              DEFAULT: '#061b31',
-              dark: '#030d1a',
-              brand: '#1c1e54',
-              deep: '#0a192f',
-            },
-            stripe: {
-              purple: '#533afd',
-              hover: '#4434d4',
-              ruby: '#ea2261',
-              magenta: '#f96bee',
-              slate: '#64748d',
-              border: '#e5edf5',
-            }
-          },
-          boxShadow: {
-            'stripe': 'rgba(50, 50, 93, 0.15) 0px 30px 60px -30px, rgba(0, 0, 0, 0.08) 0px 18px 36px -18px',
-            'stripe-hover': 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.12) 0px 30px 60px -30px',
-            'stripe-sm': 'rgba(50, 50, 93, 0.05) 0px 2px 5px 0px, rgba(0, 0, 0, 0.03) 0px 1px 1.5px 0px',
-          }
-        }
-      }
-    }
-  </script>
-  
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    .nav-link-hover::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: #533afd;
-      transition: width 0.25s ease-out;
-    }
-    .nav-link-hover:hover::after {
-      width: 100%;
-    }
-    .legal-content h2 {
-      @apply text-2xl font-light text-navy mt-12 mb-4 tracking-tight;
-    }
-    .legal-content p {
-      @apply mb-6 leading-relaxed text-slate-600 font-light;
-    }
-    .legal-content strong {
-      @apply font-semibold text-navy;
-    }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GA Infotech Outsourcing</title>
+  <meta name="description" content="GA Infotech can not only take your business process and optimize it with software, but we can also take the
+  burden of manual processes off your shoulders and delegate it to a world-wide team of service providers and manage the process for you.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-    .brand-logo {
-      transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
-      filter: drop-shadow(0 1px 1px rgba(15, 23, 42, 0.12));
-    }
-    .dark-theme .brand-logo {
-      filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
-    }
-    body.dark-theme {
-      background: #030d1a;
-      color: #cbd5e1;
-    }
-    body.dark-theme .hero-glow {
-      background: radial-gradient(circle at 50% -10%, rgba(83, 58, 253, 0.18) 0%, rgba(3, 13, 26, 0) 55%), #030d1a;
-    }
-    body.dark-theme .bg-white,
-    body.dark-theme .bg-white\/80,
-    body.dark-theme .bg-white\/70,
-    body.dark-theme .bg-white\/5,
-    body.dark-theme .bg-white\/10 {
-      background-color: rgba(10, 25, 47, 0.9) !important;
-    }
-    body.dark-theme .bg-slate-50,
-    body.dark-theme .bg-slate-50\/50,
-    body.dark-theme .bg-slate-50\/60,
-    body.dark-theme .bg-slate-50\/40 {
-      background-color: #061b31 !important;
-    }
-    body.dark-theme .bg-navy,
-    body.dark-theme .bg-navy-brand,
-    body.dark-theme .bg-navy-dark,
-    body.dark-theme .bg-navy-deep {
-      background-color: #030d1a !important;
-    }
-    body.dark-theme .text-navy,
-    body.dark-theme .text-navy:hover,
-    body.dark-theme .hover\:text-navy:hover {
-      color: #f8fafc !important;
-    }
-    body.dark-theme .text-slate-700,
-    body.dark-theme .text-slate-600,
-    body.dark-theme .text-slate-500,
-    body.dark-theme .text-slate-400 {
-      color: #cbd5e1 !important;
-    }
-    body.dark-theme .border-stripe-border,
-    body.dark-theme .border-stripe-border\/50,
-    body.dark-theme .border-white\/10 {
-      border-color: rgba(255, 255, 255, 0.12) !important;
-    }
-    body.dark-theme .shadow-stripe,
-    body.dark-theme .shadow-stripe-sm {
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 40px -20px !important;
-    }
-    body.dark-theme .text-slate-300 { color: #cbd5e1 !important; }
-    .theme-toggle {
-      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-    }
-    body.dark-theme .theme-toggle {
-      background: rgba(255, 255, 255, 0.96) !important;
-      color: #061b31 !important;
-      border-color: rgba(226, 232, 240, 0.95) !important;
-      box-shadow: rgba(15, 23, 42, 0.18) 0px 8px 18px -10px !important;
-    }
-    body.dark-theme .theme-toggle:hover {
-      background: #ffffff !important;
-    }
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 
-  </style>
 </head>
-<body class="text-slate-700 antialiased font-sans bg-white">
-  <!-- Interactive Demo Header / Controls -->
-  <div class="bg-navy text-white text-xs px-4 py-2 flex items-center border-b border-white/10 relative z-50">
-    <div class="flex items-center gap-2"><span class="text-slate-400">Global Enterprise & IT Solutions</span>
-    </div>
-    <button onclick="toggleTheme()" data-theme-toggle aria-pressed="false" class="theme-toggle ml-auto text-[11px] font-medium text-white/80 hover:text-white transition-colors">Dark mode</button>
-  </div>
 
-  <!-- NAVIGATION -->
-  <header class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-stripe-border/50 z-40 transition-colors duration-300" id="main-nav">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3 group">
-        <div class="flex items-center">
-          <img src="https://www.gainfotech.com/images/gainfotech.png" alt="GA Infotech Logo" class="brand-logo h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.outerHTML='<span class=\'font-sans text-2xl font-bold tracking-tight text-navy\'>GA <span class=\'text-stripe-purple\'>INFOTECH</span></span>'">
-        </div>
+<body>
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center align-items-center py-3 mb-4">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img src="/images/gainfotech.png" alt="GA Infotech" height="70">
       </a>
 
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">Home</a>
-        <a href="/services/" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">Services</a>
-        <a href="/about/" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">About Us</a>
-        <a href="https://www.linkedin.com/in/harpalgujral" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-navy hover:text-stripe-purple transition-colors relative nav-link-hover py-1">Contact</a>
-      </nav>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="mailto:support@gainfotech.com" rel="nofollow" class="nav-link">Contact Us</a></li>
+      </ul>
+    </header>
+  </div>
 
-      <div class="flex items-center gap-3">
-        <a href="https://www.linkedin.com/in/harpalgujral" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-stripe-purple hover:bg-stripe-hover px-5 py-2.5 rounded-md shadow-stripe-sm hover:shadow-stripe transition-all duration-300">
-          Get Started
+  <div class="container">
+    <h1 class="h2 mb-4">Privacy Policy</h1>
+    <p class="mb-10 fst-italic">Last updated May 15, 2023</p>
+
+    <section>
+      <p>This Privacy Policy explains how GA Infotech
+        receives and processes personal information as defined by applicable law from its business customers (“Customer
+        Personal Information” or “Customer PI”) and visitors (as prospective business customers) to its website or “Site”
+        (“Visitor Personal Information” or “Visitor PI”). Customer PI and Visitor PI may be referred to herein as Personal
+        Information or “PI.” As used herein “Service Provider” also means “Data Processor” as defined under applicable
+        law.
+      </p>
+      <p><strong>What Information &amp; Why:</strong>
+        GA Infotech receives Customer Personal Information for the business purposes of providing software as a service
+        (collectively referred to herein as “Services”) to its customers. Specifically, GA Infotech receives or collects
+        the
+        following types of Customer PI: First Name and Last Name; Contact information (E-mail address, physical business
+        address) and profile picture<strong>.</strong> Visitors to its Site may provide Visitor PI (including name and
+        business email address) so that GA Infotech can contact them to provide information about their Services.</p>
+      <p><strong>With Whom?:</strong> GA Infotech shares
+        PI with trusted Service Providers for the business purposes of providing the Services and includes the following
+        types of services: sales automation, website management, payment processing, integration partners, platform
+        hosting,
+        security monitoring, email marketing, marketing communications, marketing analytics, and technical support.</p>
+      <p><strong>Aggregated Information</strong>:
+        GA Infotech may use aggregated or de-identified information (not containing personal information) (“Aggregated
+        Information”) to analyze trends and improve its Services.</p>
+      <p><strong>Compliance with Laws</strong>:
+        GA Infotech may disclose PI to a third party if (a) it believes that such disclosure is reasonably necessary to
+        comply
+        with any applicable law, regulation, legal process or governmental request, or (b) to protect the security or
+        integrity of the Services from harm or illegal activities.</p>
+      <p><strong>Business Transfers</strong>: GA Infotech
+        may share or transfer PI in connection with, any merger, sale of GA Infotech assets, financing, or acquisition of
+        all or
+        a portion of the business to another company. GA Infotech may share or transfer Aggregated Information to
+        affiliate or
+        related companies for its business purposes.</p>
+      <p><strong>California Residents</strong>:
+        GA Infotech does not sell PI as defined under CCPA. GA Infotech upholds the right of non-discrimination as defined
+        under CCPA.
+      </p>
+      <p><strong>Nevada Residents</strong>: GA Infotech
+        does not sell PI as defined by Section 1.6 of Chapter 603A of the Nevada Revised Statutes.</p>
+      <h2>Your Right to Control and Access Your Personal Information</h2>
+      <p><strong><em>Your Account:</em></strong> You
+        may update, correct or delete information about you at any time by logging into your online account and modifying
+        your information or by emailing us at support@gainfotech.com.</p>
+      <p><strong><em>Retention Policy:</em></strong>
+        You may delete data that you have provided to the Services at any time. GA Infotech will delete any account
+        information
+        following the termination of a registered account.</p>
+      <p><strong><em>Do Not Track.</em></strong> Some
+        browsers offer a “do not track” (“DNT”) option. We do not respond to DNT signals.</p>
+      <p><strong><em>EU Users</em></strong>. EU users
+        have several rights with respect to their personal data including the following: (i) the right to be informed (ii)
+        the right of access; (iii) the right of rectification; (iv) the right of erasure; (v) the right to restrict
+        processing; (vi) the right of data portability; (vii) the right to object to processing; and (viii) the rights in
+        relation to automated decision making and profiling. EU users also have the right to lodge a complaint about the
+        collection or use of their personal information by notifying their EU supervisory authority. Please feel free to
+        contact us regarding this or any other EU data subject right at support@gainfotech.com.</p>
+      <p><strong><em>CA Users.</em></strong> GA Infotech
+        collects only the personal information of its B2B customers as defined by California’s Consumer Protection Act
+        (“CCPA”). GA Infotech does not sell its B2B customers’ information as defined under CCPA. GA Infotech upholds CA
+        residents’
+        rights of non-discrimination as defined under CCPA.</p>
+      <h2>Security</h2>
+      <p>We employ industry standard technological
+        measures that are reasonably designed to help protect your personal information from loss, unauthorized access,
+        disclosure, alteration or destruction. GA Infotech may use, without limitation, firewalls, password protection,
+        secure
+        socket layer, and other security measures to help prevent unauthorized access to your personal information. While
+        we
+        take reasonable efforts to guard personal information, no security system is impenetrable.</p>
+      <h2>Policy On Information Collected From Children</h2>
+      <p>This Site and our Services are not directed
+        at children under the age of 13. GA Infotech does not knowingly collect personal information from children under
+        the age
+        of 13. If you become aware that a child has provided us with personal information, please contact us at
+        support@gainfotech.com.</p>
+      <h2>Changes</h2>
+      <p>GA Infotech may need to update this Privacy
+        Policy from time to time to reflect changes to our Services and the laws applicable to our provision of the
+        Services
+        to you. If we do change this Privacy Policy, we will notify you by revising the “Last Updated” date at the top of
+        this Privacy Policy on the Site. If there are material changes to this Privacy Policy, GA Infotech will notify
+        registered
+        users of our Services. GA Infotech encourages you to review this Privacy Policy regularly for any changes. Your
+        continued
+        use of this Site or the Services and/or continued provision of personal information to us after the posting of
+        such
+        notice will be subject to the terms of the then-current Privacy Policy. If you disagree with any applicable
+        change,
+        you will need to close your account and stop using the Site and the Services.</p>
+      <h2>Contact</h2>
+      <p>If you have any questions regarding this
+        Privacy Policy, please contact us via email at support@gainfotech.com.</p>
+    </section>
+  </div>
+  
+  <div class="container mt-5">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <img src="/images/gainfotech.png" alt="GA Infotech" width="32" height="32">
         </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2026 GA Infotech, LLC</span>
       </div>
-    </div>
-  </header>
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="mailto:support@gainfotech.com" rel="nofollow" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
+        <li class="nav-item"><a href="/privacy" rel="nofollow" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
+        <li class="nav-item"><a href="/terms" rel="nofollow" class="nav-link px-2 text-body-secondary">Terms Of Service</a></li>
+      </ul>
+    </footer>
+  </div>
 
-  <main class="py-24 px-6">
-    <div class="max-w-3xl mx-auto">
-      <header class="mb-16 border-b border-stripe-border pb-8">
-        <h1 class="text-4xl md:text-5xl font-light text-navy tracking-tight mb-4">Privacy Policy</h1>
-        <p class="text-slate-400 font-light italic">Last updated May 15, 2023</p>
-      </header>
-
-      <div class="legal-content">
-        <p>This Privacy Policy explains how GA Infotech receives and processes personal information as defined by applicable law from its business customers (“Customer Personal Information” or “Customer PI”) and visitors (as prospective business customers) to its website or “Site” (“Visitor Personal Information” or “Visitor PI”). Customer PI and Visitor PI may be referred to herein as Personal Information or “PI.” As used herein “Service Provider” also means “Data Processor” as defined under applicable law.</p>
-
-        <p><strong>What Information & Why:</strong> GA Infotech receives Customer Personal Information for the business purposes of providing software as a service (collectively referred to herein as “Services”) to its customers. Specifically, GA Infotech receives or collects the following types of Customer PI: First Name and Last Name; Contact information (E-mail address, physical business address) and profile picture. Visitors to its Site may provide Visitor PI (including name and business email address) so that GA Infotech can contact them to provide information about their Services.</p>
-
-        <p><strong>With Whom?:</strong> GA Infotech shares PI with trusted Service Providers for the business purposes of providing the Services and includes the following types of services: sales automation, website management, payment processing, integration partners, platform hosting, security monitoring, email marketing, marketing communications, marketing analytics, and technical support.</p>
-
-        <p><strong>Aggregated Information:</strong> GA Infotech may use aggregated or de-identified information (not containing personal information) (“Aggregated Information”) to analyze trends and improve its Services.</p>
-
-        <p><strong>Compliance with Laws:</strong> GA Infotech may disclose PI to a third party if (a) it believes that such disclosure is reasonably necessary to comply with any applicable law, regulation, legal process or governmental request, or (b) to protect the security or integrity of the Services from harm or illegal activities.</p>
-
-        <p><strong>Business Transfers:</strong> GA Infotech may share or transfer PI in connection with, any merger, sale of GA Infotech assets, financing, or acquisition of all or a portion of the business to another company. GA Infotech may share or transfer Aggregated Information to affiliate or related companies for its business purposes.</p>
-
-        <p><strong>California Residents:</strong> GA Infotech does not sell PI as defined under CCPA. GA Infotech upholds the right of non-discrimination as defined under CCPA.</p>
-
-        <p><strong>Nevada Residents:</strong> GA Infotech does not sell PI as defined by Section 1.6 of Chapter 603A of the Nevada Revised Statutes.</p>
-
-        <h2>Your Right to Control and Access Your Personal Information</h2>
-        
-        <p><strong>Your Account:</strong> You may update, correct or delete information about you at any time by logging into your online account and modifying your information or by emailing us at support@gainfotech.com.</p>
-
-        <p><strong>Retention Policy:</strong> You may delete data that you have provided to the Services at any time. GA Infotech will delete any account information following the termination of a registered account.</p>
-
-        <p><strong>Do Not Track.</strong> Some browsers offer a “do not track” (“DNT”) option. We do not respond to DNT signals.</p>
-
-        <p><strong>EU Users.</strong> EU users have several rights with respect to their personal data including the following: (i) the right to be informed (ii) the right of access; (iii) the right of rectification; (iv) the right of erasure; (v) the right to restrict processing; (vi) the right of data portability; (vii) the right to object to processing; and (viii) the rights in relation to automated decision making and profiling. EU users also have the right to lodge a complaint about the collection or use of their personal information by notifying their EU supervisory authority. Please feel free to contact us regarding this or any other EU data subject right at support@gainfotech.com.</p>
-
-        <p><strong>CA Users.</strong> GA Infotech collects only the personal information of its B2B customers as defined by California’s Consumer Protection Act (“CCPA”). GA Infotech does not sell its B2B customers’ information as defined under CCPA. GA Infotech upholds CA residents’ rights of non-discrimination as defined under CCPA.</p>
-
-        <h2>Security</h2>
-        <p>We employ industry standard technological measures that are reasonably designed to help protect your personal information from loss, unauthorized access, disclosure, alteration or destruction. GA Infotech may use, without limitation, firewalls, password protection, secure socket layer, and other security measures to help prevent unauthorized access to your personal information. While we take reasonable efforts to guard personal information, no security system is impenetrable.</p>
-
-        <h2>Policy On Information Collected From Children</h2>
-        <p>This Site and our Services are not directed at children under the age of 13. GA Infotech does not knowingly collect personal information from children under the age of 13. If you become aware that a child has provided us with personal information, please contact us at support@gainfotech.com.</p>
-
-        <h2>Changes</h2>
-        <p>GA Infotech may need to update this Privacy Policy from time to time to reflect changes to our Services and the laws applicable to our provision of the Services to you. If we do change this Privacy Policy, we will notify you by revising the “Last Updated” date at the top of this Privacy Policy on the Site. If there are material changes to this Privacy Policy, GA Infotech will notify registered users of our Services. GA Infotech encourages you to review this Privacy Policy regularly for any changes. Your continued use of this Site or the Services and/or continued provision of personal information to us after the posting of such notice will be subject to the terms of the then-current Privacy Policy. If you disagree with any applicable change, you will need to close your account and stop using the Site and the Services.</p>
-
-        <h2>Contact</h2>
-        <p>If you have any questions regarding this Privacy Policy, please contact us via email at support@gainfotech.com.</p>
-      </div>
-    </div>
-  </main>
-
-  <footer class="bg-white border-t border-stripe-border/50 py-12 px-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-slate-400 font-light">
-      <div class="flex items-center gap-3">
-        <img src="https://www.gainfotech.com/images/gainfotech.png" alt="GA Infotech" class="brand-logo h-8 w-auto object-contain opacity-60" onerror="this.outerHTML='<span class=\'font-sans text-sm font-bold text-slate-400\'>GA INFOTECH</span>'">
-        <span>© 2026 GA Infotech, LLC. All rights reserved.</span>
-      </div>
-      <div class="flex flex-wrap gap-6">
-        <a href="https://www.linkedin.com/in/harpalgujral" target="_blank" rel="noopener noreferrer" class="hover:text-stripe-purple transition-colors">Contact</a>
-        <a href="/privacy" class="hover:text-stripe-purple transition-colors text-navy font-normal">Privacy Policy</a>
-        <a href="/terms" class="hover:text-stripe-purple transition-colors">Terms of Service</a>
-      </div>
-    </div>
-  </footer>
-
-
-  <script>
-    const THEME_STORAGE_KEY = 'ga-theme';
-    function setTheme(isDark) {
-      document.body.classList.toggle('dark-theme', isDark);
-      document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
-        btn.textContent = isDark ? 'Light mode' : 'Dark mode';
-        btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      });
-      try { localStorage.setItem(THEME_STORAGE_KEY, isDark ? 'dark' : 'light'); } catch (_) {}
-    }
-    function toggleTheme() {
-      setTheme(!document.body.classList.contains('dark-theme'));
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      let pref = null;
-      try { pref = localStorage.getItem(THEME_STORAGE_KEY); } catch (_) {}
-      const wantsDark = pref ? pref === 'dark' : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(wantsDark);
-    });
-  </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
